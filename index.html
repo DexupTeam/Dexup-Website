@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dexup — ta collection Pokémon TCG, dans ta poche</title>
+  <meta name="description" content="Dexup, l'app gratuite pour suivre ta collection de cartes Pokémon : extensions anglaises, japonaises et chinoises en français, scanner de cartes, valeur Cardmarket et courbes de prix, classeur et communauté." />
+  <meta name="theme-color" content="#f2f2f2" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:title" content="Dexup — ta collection Pokémon TCG, dans ta poche" />
+  <meta property="og:description" content="Scanner de cartes, valeur Cardmarket, courbes de prix, extensions EN / JA / CN en français. Gratuit." />
+  <meta property="og:image" content="assets/screens/home.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Zilla+Slab:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#features">Aller au contenu</a>
+
+  <header class="top">
+    <a class="brand" href="#" aria-label="Dexup, haut de page">
+      <img src="assets/logo.svg" alt="" width="26" height="26" />
+      <span>Dexup</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#scanner">Scanner</a>
+      <a href="#install">Installer</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-dark btn-sm" href="https://dexup.netlify.app">Ouvrir l'app <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <!-- ── Accueil ─────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker"><i class="led"></i> PWA gratuite · sans pub · FR / EN / JA / CN</p>
+        <h1 class="hero-title" aria-label="Dexup">Dexup</h1>
+        <p class="hero-lead">Ta collection de cartes Pokémon, dans ta poche.</p>
+        <p class="hero-text">
+          Coche tes cartes, scanne-les à l'appareil photo, suis leur valeur sur Cardmarket
+          et montre ta vitrine. Une app qui s'installe en deux touches, sans store.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="https://dexup.netlify.app">Commencer ma collection <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#install">Comment l'installer</a>
+        </div>
+      </div>
+      <div class="hero-phones" aria-hidden="true">
+        <figure class="phone phone-back"><img src="assets/screens/set.jpg" alt="" loading="lazy" /></figure>
+        <figure class="phone phone-front"><img src="assets/screens/home.jpg" alt="" /></figure>
+      </div>
+    </section>
+
+    <!-- ── Chiffres ────────────────────────────────────────── -->
+    <section class="stats" aria-label="Dexup en chiffres">
+      <div class="stat"><b class="dot-num">50k+</b><span>cartes référencées</span></div>
+      <div class="stat"><b class="dot-num">3</b><span>catalogues : anglais, japonais, chinois</span></div>
+      <div class="stat"><b class="dot-num">4</b><span>langues reconnues par le scanner</span></div>
+      <div class="stat"><b class="dot-num">0€</b><span>gratuit et sans publicité</span></div>
+    </section>
+
+    <!-- ── Fonctionnalités ─────────────────────────────────── -->
+    <section class="section" id="features">
+      <header class="section-head">
+        <p class="label">[01] Fonctionnalités</p>
+        <h2 class="h2">Tout ton classeur, au même endroit.</h2>
+      </header>
+      <div class="grid">
+        <article class="feature"><i class="dot-icon" data-icon="LayoutGrid"></i><h3>Toutes les extensions</h3><p>Du Set de Base aux dernières sorties, avec les noms en français. Une touche sur le + et la carte est dans ta collection.</p></article>
+        <article class="feature"><i class="dot-icon" data-icon="ScanLine"></i><h3>Scanner de cartes</h3><p>Pointe l'appareil photo : Dexup reconnaît la carte, en anglais, français, japonais ou chinois.</p></article>
+        <article class="feature"><i class="dot-icon" data-icon="Chart"></i><h3>Valeur et courbes</h3><p>Prix Cardmarket du jour, valeur totale de ta collection et son évolution dans le temps.</p></article>
+        <article class="feature"><i class="dot-icon" data-icon="Languages"></i><h3>Japon et Chine</h3><p>Les extensions japonaises et les exclusivités chinoises, avec images et prix, à côté des sets anglais.</p></article>
+        <article class="feature"><i class="dot-icon" data-icon="BookMarked"></i><h3>Classeur</h3><p>Listes, favoris, cartes gradées (PSA, PCA, CGC, Beckett…), langue et prix constaté, et tes propres photos.</p></article>
+        <article class="feature"><i class="dot-icon" data-icon="Users"></i><h3>Communauté</h3><p>Profil public, vitrine de tes 9 plus belles cartes, abonnements entre collectionneurs.</p></article>
+      </div>
+    </section>
+
+    <!-- ── Scanner ─────────────────────────────────────────── -->
+    <section class="section section-dark" id="scanner">
+      <div class="split">
+        <div>
+          <p class="label">[02] Scanner</p>
+          <h2 class="h2">Montre la carte. Dexup la trouve.</h2>
+          <p class="lead">
+            Le scanner tourne directement dans ton navigateur, sans envoyer tes photos sur un serveur.
+            Il repère la carte, la redresse et la compare à plus de 120 000 images de référence.
+          </p>
+          <ul class="ticks">
+            <li>Cartes anglaises, françaises, japonaises et chinoises</li>
+            <li>Photo prise toute seule dès que la carte est nette</li>
+            <li>Une hésitation ? Dexup te propose les candidates</li>
+          </ul>
+        </div>
+        <div class="scan-art" aria-hidden="true">
+          <div class="scan-card"><i class="dot-icon dot-icon-xl" data-icon="Card"></i><span class="scan-line"></span></div>
+          <p class="scan-status"><i class="led led-on"></i> Carte reconnue · 0,6 s</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Prix ────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="split split-rev">
+        <div class="shots">
+          <figure class="phone"><img src="assets/screens/price.jpg" alt="Fiche d'une carte : prix Cardmarket et courbe d'évolution" loading="lazy" /></figure>
+        </div>
+        <div>
+          <p class="label">[03] Valeur</p>
+          <h2 class="h2">Combien vaut ton classeur&nbsp;?</h2>
+          <p class="lead">
+            Chaque carte affiche son prix tendance Cardmarket, ses moyennes sur 7 et 30 jours et la courbe
+            de son prix. La valeur de ta collection se calcule toute seule, et une carte gradée compte
+            pour la valeur que tu lui donnes.
+          </p>
+          <ul class="ticks">
+            <li>Historique des prix relevé chaque jour</li>
+            <li>Courbe de la collection entière</li>
+            <li>Produits scellés : boosters, displays, ETB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Collection ──────────────────────────────────────── -->
+    <section class="section">
+      <div class="split">
+        <div>
+          <p class="label">[04] Collection</p>
+          <h2 class="h2">Coche, filtre, complète.</h2>
+          <p class="lead">
+            Possédées, manquantes, en grille ou en liste : tu vois tout de suite ce qui manque à un set.
+            Ta collection est synchronisée entre ton téléphone et ton ordinateur, et reste disponible hors ligne.
+          </p>
+        </div>
+        <div class="shots shots-duo">
+          <figure class="phone"><img src="assets/screens/set.jpg" alt="Les cartes d'une extension, avec celles possédées cochées" loading="lazy" /></figure>
+          <figure class="phone phone-offset"><img src="assets/screens/card.jpg" alt="La fiche d'une carte" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Vitrine ─────────────────────────────────────────── -->
+    <section class="section">
+      <div class="split split-rev">
+        <div class="shots">
+          <figure class="phone"><img src="assets/screens/vitrine.jpg" alt="La vitrine d'un profil : les cartes mises en avant" loading="lazy" /></figure>
+        </div>
+        <div>
+          <p class="label">[05] Vitrine</p>
+          <h2 class="h2">Tes plus belles pièces, en avant.</h2>
+          <p class="lead">
+            Choisis jusqu'à 9 cartes, range-les en les glissant, et partage ton profil. Suis d'autres
+            collectionneurs pour voir leurs trouvailles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Installer ───────────────────────────────────────── -->
+    <section class="section" id="install">
+      <header class="section-head">
+        <p class="label">[06] Installer</p>
+        <h2 class="h2">Pas de store. Deux touches.</h2>
+        <p class="lead">Dexup est une app web : elle s'installe depuis le navigateur et s'ouvre ensuite comme une app.</p>
+      </header>
+      <div class="grid grid-3">
+        <article class="step"><b class="dot-num">1</b><h3>Ouvre dexup.netlify.app</h3><p>Dans Safari sur iPhone, dans Chrome sur Android ou sur ordinateur.</p></article>
+        <article class="step"><b class="dot-num">2</b><h3>Ajoute à l'écran d'accueil</h3><p>iPhone : bouton Partager, puis « Sur l'écran d'accueil ». Android : menu ⋮, puis « Installer l'application ».</p></article>
+        <article class="step"><b class="dot-num">3</b><h3>Crée ton compte</h3><p>Un e-mail et un mot de passe suffisent pour retrouver ta collection partout.</p></article>
+      </div>
+      <div class="center"><a class="btn btn-dark" href="https://dexup.netlify.app">Ouvrir Dexup <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section class="section" id="faq">
+      <header class="section-head">
+        <p class="label">[07] Questions</p>
+        <h2 class="h2">Bon à savoir.</h2>
+      </header>
+      <div class="faq">
+        <details><summary>C'est vraiment gratuit&nbsp;?</summary><p>Oui. Pas d'abonnement, pas de publicité. Dexup est un projet de passionnés.</p></details>
+        <details><summary>D'où viennent les prix&nbsp;?</summary><p>Du relevé public de Cardmarket, mis à jour chaque jour. Le prix tendance mélange toutes les langues : sur une carte, tu peux saisir le prix constaté dans sa langue.</p></details>
+        <details><summary>Et les cartes françaises&nbsp;?</summary><p>Les cartes françaises sont celles des extensions internationales : Dexup affiche leur nom en français, et le scanner les reconnaît directement.</p></details>
+        <details><summary>Mes données sont-elles en sécurité&nbsp;?</summary><p>Ta collection est liée à ton compte et n'est visible des autres que si tu rends ton profil public. Le scanner analyse les photos sur ton appareil, sans les envoyer.</p></details>
+        <details><summary>Ça marche hors ligne&nbsp;?</summary><p>Oui pour ta collection et les extensions déjà ouvertes. Les prix et le scanner se mettent à jour dès que tu retrouves du réseau.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-brand">
+      <img src="assets/logo.svg" alt="" width="34" height="34" />
+      <span class="dot-word">Dexup</span>
+    </div>
+    <nav class="foot-links" aria-label="Liens">
+      <a href="https://dexup.netlify.app">L'app</a>
+      <a href="https://github.com/DexupTeam">GitHub</a>
+    </nav>
+    <p class="foot-credits">
+      Données : <a href="https://pokemontcg.io">Pokémon TCG API</a>, <a href="https://tcgdex.dev">TCGdex</a>,
+      <a href="https://github.com/cardcorpus">CardCorpus</a> (CC BY 4.0) et le relevé public de <a href="https://www.cardmarket.com">Cardmarket</a>.
+    </p>
+    <p class="foot-legal">
+      Dexup est un projet de fans indépendant. Pokémon et les noms associés sont des marques de Nintendo,
+      Creatures Inc. et GAME FREAK inc. ; Dexup n'est ni affilié ni approuvé par eux.
+    </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

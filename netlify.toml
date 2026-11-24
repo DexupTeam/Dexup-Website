@@ -1,0 +1,8 @@
+# Site statique : rien à construire, Netlify publie le dossier tel quel.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
