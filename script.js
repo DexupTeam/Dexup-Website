@@ -87,17 +87,54 @@ document.querySelectorAll('[data-icon]').forEach((el) => {
   if (rows.length !== rows[0].length) el.style.aspectRatio = `${rows[0].length} / ${rows.length}`;
 });
 
-// Les blocs apparaissent en fondu quand ils entrent à l'écran.
-const targets = document.querySelectorAll('.feature, .step, .split > *, .stat, .faq details, .section-head');
+// Apparition au défilement : fondu et montée, en cascade dans une même grille ; les téléphones
+// glissent en se redressant, les grandes images grossissent légèrement, les chiffres défilent.
+const REVEALS = [
+  ['.section-head, .split > div:not(.shots):not(.scan-art)', '', 0],
+  ['.feature, .step', '', 90],
+  ['.stat', '', 90],
+  ['.faq details', '', 60],
+  ['.rail-item', '', 80],
+  ['.shots .phone', 'reveal-phone', 160],
+  ['.browser, .scan-art, .chips', 'reveal-zoom', 0],
+];
+
+function countUp(el) {
+  const m = /^(\d+)(.*)$/.exec(el.textContent.trim());
+  if (!m || m[1] === '0') return;
+  const target = Number(m[1]);
+  const t0 = performance.now();
+  const tick = (now) => {
+    const k = Math.min(1, (now - t0) / 1100);
+    el.textContent = `${Math.round(target * (1 - (1 - k) ** 3))}${m[2]}`;
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  el.textContent = `0${m[2]}`;
+  requestAnimationFrame(tick);
+}
+
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const io = new IntersectionObserver((entries) => {
-    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-  }, { rootMargin: '0px 0px -8% 0px' });
-  targets.forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${(i % 3) * 70}ms`;
-    io.observe(el);
-  });
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      e.target.classList.add('is-in');
+      const num = e.target.matches('.stat') && e.target.querySelector('.dot-num');
+      if (num) setTimeout(() => countUp(num), parseFloat(e.target.style.transitionDelay) || 0);
+      io.unobserve(e.target);
+    }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  for (const [selector, variant, step] of REVEALS) {
+    // Le décalage repart de zéro dans chaque groupe (grille, rangée, paire de téléphones).
+    const groups = new Map();
+    document.querySelectorAll(selector).forEach((el) => {
+      const i = groups.get(el.parentElement) ?? 0;
+      groups.set(el.parentElement, i + 1);
+      el.classList.add('reveal');
+      if (variant) el.classList.add(variant);
+      if (step) el.style.transitionDelay = `${Math.min(i, 6) * step}ms`;
+      io.observe(el);
+    });
+  }
 }
 
 // ── Aperçu : onglets Téléphone / Ordinateur, défilement des téléphones, écran du navigateur ──
