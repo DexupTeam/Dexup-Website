@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta property="og:title" content="Dexup — ta collection Pokémon TCG, dans ta poche" />
   <meta property="og:description" content="Scanner de cartes, valeur Cardmarket, courbes de prix, extensions EN / JA / CN en français. Gratuit." />
-  <meta property="og:image" content="assets/screens/home.jpg" />
+  <meta property="og:image" content="https://dexup-site.netlify.app/assets/screens/desktop-home.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Zilla+Slab:wght@300;400&display=swap" rel="stylesheet" />
@@ -27,6 +27,7 @@
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#features">Fonctionnalités</a>
+      <a href="#apercu">Aperçu</a>
       <a href="#scanner">Scanner</a>
       <a href="#install">Installer</a>
       <a href="#faq">FAQ</a>
@@ -51,8 +52,8 @@
         </div>
       </div>
       <div class="hero-phones" aria-hidden="true">
-        <figure class="phone phone-back"><img src="assets/screens/set.jpg" alt="" loading="lazy" /></figure>
-        <figure class="phone phone-front"><img src="assets/screens/home.jpg" alt="" /></figure>
+        <figure class="phone phone-back"><img src="assets/screens/mobile-set.webp" alt="" loading="lazy" /></figure>
+        <figure class="phone phone-front"><img src="assets/screens/mobile-home.webp" alt="" /></figure>
       </div>
     </section>
 
@@ -80,11 +81,78 @@
       </div>
     </section>
 
+    <!-- ── Aperçu : captures mobile et ordinateur ─────────── -->
+    <section class="section" id="apercu">
+      <header class="section-head">
+        <p class="label">[02] Aperçu</p>
+        <h2 class="h2">Sur ton téléphone comme sur ton ordinateur.</h2>
+        <p class="lead">La même app partout, synchronisée : coche une carte dans le métro, retrouve-la le soir sur grand écran.</p>
+      </header>
+      <div class="seg" role="tablist" aria-label="Type d'écran" style="--n: 2; --i: 0">
+        <span class="seg-thumb" aria-hidden="true"></span>
+        <button type="button" role="tab" aria-selected="true" aria-controls="view-mobile" id="tab-mobile" data-view="mobile">Téléphone</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="view-desktop" id="tab-desktop" data-view="desktop">Ordinateur</button>
+      </div>
+
+      <div class="view" id="view-mobile" role="tabpanel" aria-labelledby="tab-mobile">
+        <div class="rail" role="list" tabindex="0" aria-label="Captures sur téléphone">
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-home.webp" alt="Accueil : Ta collection en un coup d'œil" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Accueil</b>Ta collection en un coup d'œil</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-sets.webp" alt="Extensions : Anglaises, japonaises, chinoises, en français" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Extensions</b>Anglaises, japonaises, chinoises, en français</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-set.webp" alt="Une extension : Coche ce que tu as, vois ce qui manque" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Une extension</b>Coche ce que tu as, vois ce qui manque</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-card.webp" alt="Fiche carte : Prix, grade, langue, ta photo" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Fiche carte</b>Prix, grade, langue, ta photo</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-value.webp" alt="Ma collection : Triée par valeur, avec sa courbe" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Ma collection</b>Triée par valeur, avec sa courbe</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-products.webp" alt="Produits : Boosters, displays, ETB et leurs prix" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Produits</b>Boosters, displays, ETB et leurs prix</figcaption>
+          </figure>
+          <figure class="rail-item" role="listitem">
+            <div class="phone"><img src="assets/screens/mobile-vitrine.webp" alt="Profil : Ta vitrine, visible par la communauté" loading="lazy" width="390" height="844" /></div>
+            <figcaption><b>Profil</b>Ta vitrine, visible par la communauté</figcaption>
+          </figure>
+        </div>
+        <div class="rail-nav">
+          <button type="button" class="round" data-rail="-1" aria-label="Captures précédentes">←</button>
+          <button type="button" class="round" data-rail="1" aria-label="Captures suivantes">→</button>
+        </div>
+      </div>
+
+      <div class="view" id="view-desktop" role="tabpanel" aria-labelledby="tab-desktop" hidden>
+        <figure class="browser">
+          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>dexup.netlify.app</span></div>
+          <img id="desk-shot" src="assets/screens/desktop-home.webp" alt="Accueil : Ta collection en un coup d'œil" loading="lazy" width="1440" height="900" />
+        </figure>
+        <div class="chips" role="group" aria-label="Choisir l'écran">
+            <button type="button" class="chip is-active" data-shot="home" data-caption="Accueil : Ta collection en un coup d'œil" aria-pressed="true">Accueil</button>
+            <button type="button" class="chip" data-shot="sets" data-caption="Extensions : Anglaises, japonaises, chinoises, en français" aria-pressed="false">Extensions</button>
+            <button type="button" class="chip" data-shot="set" data-caption="Une extension : Coche ce que tu as, vois ce qui manque" aria-pressed="false">Une extension</button>
+            <button type="button" class="chip" data-shot="card" data-caption="Fiche carte : Prix, grade, langue, ta photo" aria-pressed="false">Fiche carte</button>
+            <button type="button" class="chip" data-shot="value" data-caption="Ma collection : Triée par valeur, avec sa courbe" aria-pressed="false">Ma collection</button>
+            <button type="button" class="chip" data-shot="products" data-caption="Produits : Boosters, displays, ETB et leurs prix" aria-pressed="false">Produits</button>
+            <button type="button" class="chip" data-shot="vitrine" data-caption="Profil : Ta vitrine, visible par la communauté" aria-pressed="false">Profil</button>
+        </div>
+      </div>
+    </section>
+
     <!-- ── Scanner ─────────────────────────────────────────── -->
     <section class="section section-dark" id="scanner">
       <div class="split">
         <div>
-          <p class="label">[02] Scanner</p>
+          <p class="label">[03] Scanner</p>
           <h2 class="h2">Montre la carte. Dexup la trouve.</h2>
           <p class="lead">
             Le scanner tourne directement dans ton navigateur, sans envoyer tes photos sur un serveur.
@@ -107,10 +175,10 @@
     <section class="section">
       <div class="split split-rev">
         <div class="shots">
-          <figure class="phone"><img src="assets/screens/price.jpg" alt="Fiche d'une carte : prix Cardmarket et courbe d'évolution" loading="lazy" /></figure>
+          <figure class="phone"><img src="assets/screens/mobile-value.webp" alt="Ma collection triée par valeur, avec la courbe de sa valeur" loading="lazy" /></figure>
         </div>
         <div>
-          <p class="label">[03] Valeur</p>
+          <p class="label">[04] Valeur</p>
           <h2 class="h2">Combien vaut ton classeur&nbsp;?</h2>
           <p class="lead">
             Chaque carte affiche son prix tendance Cardmarket, ses moyennes sur 7 et 30 jours et la courbe
@@ -130,7 +198,7 @@
     <section class="section">
       <div class="split">
         <div>
-          <p class="label">[04] Collection</p>
+          <p class="label">[05] Collection</p>
           <h2 class="h2">Coche, filtre, complète.</h2>
           <p class="lead">
             Possédées, manquantes, en grille ou en liste : tu vois tout de suite ce qui manque à un set.
@@ -138,8 +206,8 @@
           </p>
         </div>
         <div class="shots shots-duo">
-          <figure class="phone"><img src="assets/screens/set.jpg" alt="Les cartes d'une extension, avec celles possédées cochées" loading="lazy" /></figure>
-          <figure class="phone phone-offset"><img src="assets/screens/card.jpg" alt="La fiche d'une carte" loading="lazy" /></figure>
+          <figure class="phone"><img src="assets/screens/mobile-set.webp" alt="Les cartes d'une extension, avec celles possédées cochées" loading="lazy" /></figure>
+          <figure class="phone phone-offset"><img src="assets/screens/mobile-card.webp" alt="La fiche d'une carte" loading="lazy" /></figure>
         </div>
       </div>
     </section>
@@ -148,10 +216,10 @@
     <section class="section">
       <div class="split split-rev">
         <div class="shots">
-          <figure class="phone"><img src="assets/screens/vitrine.jpg" alt="La vitrine d'un profil : les cartes mises en avant" loading="lazy" /></figure>
+          <figure class="phone"><img src="assets/screens/mobile-vitrine.webp" alt="Un profil public et sa vitrine" loading="lazy" /></figure>
         </div>
         <div>
-          <p class="label">[05] Vitrine</p>
+          <p class="label">[06] Vitrine</p>
           <h2 class="h2">Tes plus belles pièces, en avant.</h2>
           <p class="lead">
             Choisis jusqu'à 9 cartes, range-les en les glissant, et partage ton profil. Suis d'autres
@@ -164,7 +232,7 @@
     <!-- ── Installer ───────────────────────────────────────── -->
     <section class="section" id="install">
       <header class="section-head">
-        <p class="label">[06] Installer</p>
+        <p class="label">[07] Installer</p>
         <h2 class="h2">Pas de store. Deux touches.</h2>
         <p class="lead">Dexup est une app web : elle s'installe depuis le navigateur et s'ouvre ensuite comme une app.</p>
       </header>
@@ -179,7 +247,7 @@
     <!-- ── FAQ ─────────────────────────────────────────────── -->
     <section class="section" id="faq">
       <header class="section-head">
-        <p class="label">[07] Questions</p>
+        <p class="label">[08] Questions</p>
         <h2 class="h2">Bon à savoir.</h2>
       </header>
       <div class="faq">

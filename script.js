@@ -99,3 +99,47 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
     io.observe(el);
   });
 }
+
+// ── Aperçu : onglets Téléphone / Ordinateur, défilement des téléphones, écran du navigateur ──
+const seg = document.querySelector('#apercu .seg');
+if (seg) {
+  const tabs = [...seg.querySelectorAll('[role=tab]')];
+  const select = (tab) => {
+    tabs.forEach((t, i) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      if (on) seg.style.setProperty('--i', i);
+    });
+  };
+  tabs.forEach((t) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      const next = tabs[(tabs.indexOf(t) + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+      select(next);
+      next.focus();
+    });
+  });
+}
+
+const rail = document.querySelector('.rail');
+document.querySelectorAll('[data-rail]').forEach((btn) => btn.addEventListener('click', () => {
+  const step = rail.querySelector('.rail-item').getBoundingClientRect().width + 22;
+  rail.scrollBy({ left: Number(btn.dataset.rail) * step * 2, behavior: 'smooth' });
+}));
+
+const desk = document.getElementById('desk-shot');
+document.querySelectorAll('.chip[data-shot]').forEach((chip, _, chips) => chip.addEventListener('click', () => {
+  chips.forEach((c) => { c.classList.toggle('is-active', c === chip); c.setAttribute('aria-pressed', c === chip); });
+  const src = `assets/screens/desktop-${chip.dataset.shot}.webp`;
+  if (desk.getAttribute('src') === src) return;
+  const next = new Image();
+  next.src = src;
+  desk.classList.add('is-swapping');
+  next.decode().catch(() => {}).then(() => setTimeout(() => {
+    desk.src = src;
+    desk.alt = chip.dataset.caption;
+    desk.classList.remove('is-swapping');
+  }, 180));
+}));
