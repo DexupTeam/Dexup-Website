@@ -133,7 +133,7 @@ h1, h2, h3, p { margin: 0; }
   .split { grid-template-columns: 1fr; }
   .split-rev > .shots { order: 2; }
 }
-.shots { display: flex; justify-content: center; }
+.shots { display: flex; justify-content: center; align-items: flex-start; }
 .shots .phone { width: min(290px, 70vw); }
 .shots-duo { gap: 18px; }
 .shots-duo .phone { width: min(250px, 42vw); }
